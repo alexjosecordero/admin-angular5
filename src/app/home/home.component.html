@@ -1,0 +1,29 @@
+﻿ <navbar-cmp></navbar-cmp>
+<div class="card">
+    <div class="header">
+        <h4 class="title">Bienvenido {{currentUser.firstName}}!</h4>
+        <p class="category">Gestion de usuarios</p>
+    </div>
+    <div class="content table-responsive table-full-width">
+          <table class="table table-hover table-striped">
+                <thead>
+                    <tr>
+                   <th>Usuario</th> 
+                   <th>Nombre</th>
+                   <th>Apellido</th>
+                     </tr>
+                </thead>
+                <tbody *ngFor="let user of users">
+                 <tr>
+                        <th>{{user.username}}</th>
+                        <th>{{user.firstName}}</th>
+                        <th>{{user.lastName}}</th>
+                        <td> <a (click)="deleteUser(user.id)">Eliminar</a></td>
+                 </tr>
+            
+                </tbody>
+          </table>
+
+    </div>
+</div>
+
